@@ -38,7 +38,7 @@ agent any
        	    	}
            }
    	 }*/
-		stage('Tag') {
+	stage('Tag') {
             steps {
     		bat "git tag"
     	 
@@ -47,11 +47,17 @@ agent any
 	            echo "La tag es: ${tag}"
 	            tag2="${tag}".split("-")[2]
 	             echo "La tag2 es: ${tag2}"
-	             if (tag2== "PRO"){
-	                 echo "Estoy en PRO"
+	             if (tag2== "QA"){
+	                echo "Estoy en QA"
 	                }
-	             }
-	        
+	             if (tag2== "DES"){
+	                echo "Estoy en DES"
+	                }
+		    if (tag2== "PRO"){
+	                echo "Estoy en PRO"
+		    }    
+		}
             }
+        }
     }
-}  
+}
