@@ -40,8 +40,7 @@ agent any
    	 }*/
 	stage('Tag') {
             steps {
-    		bat "git tag"
-    	 
+  	 
 	        script{
 	            tag= bat(returnStdout:  true, script: "git describe").trim()
 	            echo "La tag es: ${tag}"
